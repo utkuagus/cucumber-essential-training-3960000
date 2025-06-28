@@ -1,7 +1,7 @@
 Feature: Final Bill Calculation
 
   @ScenarioOutlineExample
-  Scenario Outline: Customer Bill Calculation
+  Scenario Outline: Customer Bill Amount Calculation
     Given I have a customer
     And User enters initial bill amount as <InitialBillAmount>
     And Sales Tax Rate is <TaxRate> Percent
