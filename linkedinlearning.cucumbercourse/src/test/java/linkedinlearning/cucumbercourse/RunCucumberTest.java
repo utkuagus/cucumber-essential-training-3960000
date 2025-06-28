@@ -42,10 +42,20 @@ import static io.cucumber.junit.platform.engine.Constants.PLUGIN_PROPERTY_NAME;
 // run only one test
 // mvn test -Dcucumber.filter.tags="@NightlyBuildTest and @RegularTest"
 // uncomment next two lines to run reports
-// @ConfigurationParameter(key = PLUGIN_PROPERTY_NAME, 
-// value = "junit:target/cucumber-reports/Cucumber.xml, json:target/cucumber-reports/Cucumber.json, html:target/cucumber-reports/Cucumber.html, timeline:target/cucumber-reports/CucumberTimeline")
+// @ConfigurationParameter(key = PLUGIN_PROPERTY_NAME,
+// value = "junit:target/cucumber-reports/Cucumber.xml,
+// json:target/cucumber-reports/Cucumber.json,
+// html:target/cucumber-reports/Cucumber.html,
+// timeline:target/cucumber-reports/CucumberTimeline")
 // uncomment next two lines to test with dry run = true
 // @ConfigurationParameter( key = Constants.EXECUTION_DRY_RUN_PROPERTY_NAME,
 // value = "true")
+// uncomment next line to test ListOfStrings
+// @IncludeTags("ListofStrings")
+// uncomment next line to test ListofListOfStrings
+// @IncludeTags("ListofListofStrings")
+// uncomment next line to test ListofMaps
+// @IncludeTags("ListofMaps")
+@IncludeTags("ScenarioOutlineExample")
 public class RunCucumberTest {
 }
