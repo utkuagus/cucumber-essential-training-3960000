@@ -8,8 +8,12 @@ public class MenuManagementSteps {
   RestaurantMenuItem NewMenuItem;
   RestaurantMenu LocationMenu = new RestaurantMenu();
 
-  @Given("I have a menu item with name {string} and price {int}")
-  public void i_have_a_menu_item_with_name_and_price(String menuItemName, Integer price) {
+  // using regular expressions instead of cucumber expressions
+  // use next line if scenario steps do not have currency sign
+  //@Given("^I have a menu item with name \"([^\"]+)\" and price (\\d+)$")
+  //adding expression for optional currency type along with name and price 
+  @Given("^I have a menu item with name \"([^\"]+)\" and price ([$]*)(\\d+)$")
+  public void i_have_a_menu_item_with_name_and_price(String menuItemName, String CurrencyType, Integer price) {
 
     NewMenuItem = new RestaurantMenuItem(menuItemName, menuItemName, price);
     System.out.println("Step 1");
