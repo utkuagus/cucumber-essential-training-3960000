@@ -7,6 +7,9 @@ public class RestaurantMenu {
   ArrayList<RestaurantMenuItem> MenuItems = new ArrayList<RestaurantMenuItem>();
 
   public boolean addMenuItem(RestaurantMenuItem newMenuItem) throws IllegalArgumentException {
+    if (DoesItemExist(newMenuItem)) {
+      throw new IllegalArgumentException("Duplicate Item");
+    }
     return MenuItems.add(newMenuItem);
   }
 
