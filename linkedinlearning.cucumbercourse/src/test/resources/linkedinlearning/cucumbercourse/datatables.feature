@@ -1,3 +1,4 @@
+@DataTables
 Feature: Data Tables
 
   @ListofStrings

@@ -56,6 +56,6 @@ import static io.cucumber.junit.platform.engine.Constants.PLUGIN_PROPERTY_NAME;
 // @IncludeTags("ListofListofStrings")
 // uncomment next line to test ListofMaps
 // @IncludeTags("ListofMaps")
-@IncludeTags("ScenarioOutlineExample")
+@IncludeTags("ListofMaps")
 public class RunCucumberTest {
 }

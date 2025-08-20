@@ -9,7 +9,7 @@ public class MenuManagementSteps {
   RestaurantMenu LocationMenu = new RestaurantMenu();
   String ErrorMessage;
 
-  //constructor
+  // constructor
   public MenuManagementSteps() {
     // Initialization code (e.g., set default values for fields)
     System.out.println("Constructor called");
@@ -40,13 +40,19 @@ public class MenuManagementSteps {
   public void menu_Item_with_name_should_be_added(String string) {
     boolean ItemExists = LocationMenu.DoesItemExist(NewMenuItem);
     assertThat(ItemExists).isEqualTo(true);
+    assertThat(string).isEqualTo(NewMenuItem.getMenuItemName());
     System.out.println("Step 3: " + ItemExists);
-    assertThatNoException();
+  }
+
+  @Then("Menu Item with name {string} should NOT be added")
+  public void menu_Item_with_name_should_not_be_added(String string) {
+    assertThat(string).isNotEqualTo(NewMenuItem.getMenuItemName());
+    System.out.println("Step 3 Not Equals");
   }
 
   @Then("I should see an error message with value {string}")
   public void i_should_see_an_error_message_with_value(String string) {
-    assertThat(ErrorMessage).isEqualTo("Duplicate Item");
+    assertThat(ErrorMessage).isEqualTo(string);
     System.out.println("Step 3 Error Message");
   }
 

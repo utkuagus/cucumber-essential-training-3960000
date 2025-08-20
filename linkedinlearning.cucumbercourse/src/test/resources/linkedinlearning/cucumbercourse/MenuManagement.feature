@@ -17,7 +17,7 @@
 ## (Comments)
 #Sample Feature Definition Template
 
-
+@MenuManagement
 Feature: Menu Management
 
   Background: Setup a menu item
@@ -37,11 +37,17 @@ Feature: Menu Management
     When I add that menu item
     Then Menu Item with name "Cucumber Salad" should be added
 
+  @RegularTest
+  Scenario: Add another menu item 2
+    Given I have a menu item with name "Pizza" and price 15
+    When I add that menu item
+    Then Menu Item with name "Sushi" should NOT be added
+
   @NightlyBuildTest @RegularTest
   Scenario: Add third menu item
     Given I have a menu item with name "Chicken Sandwich" and price 15
     When I add that menu item
-    Then I should see an error message with value "Duplicate item"
+    Then I should see an error message with value "Duplicate Item"
 
 
 
